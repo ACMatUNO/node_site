@@ -9,11 +9,16 @@
       <div class = "top_menu">
          <div class = "container">
             <ul class = "pull-left">
-               <li><a href="#">About</a></li>
+               <li><a href="/about">About</a></li>
             </ul>
             <ul class = "pull-right">
                <li><a href="/members">Current Members</a></li>
                <li><a href="#">Become a Member</a></li>
+               <li><% if (!user) { %>
+	               Welcome! Please<a href="/login"><button type="button" class="btn btn-primary">Log In</button></a>
+               <% } else { %>
+	               Hello, <%= user.username %>. View your<a href="/profile">profile</a>.
+               <% } %></li>
             </ul>
          </div>
       </div>
